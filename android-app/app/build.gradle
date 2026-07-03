@@ -1,0 +1,115 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace = "com.sdk.glassessdksample"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.sdk.glassessdksample"
+        minSdk = 26
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDirs = ['src/main/java']
+                // ── Exclude stale decompiled-bytecode .java files ───────────────────────
+                // The ui/wifi/ tree contains .java files that are Kotlin-compiled bytecode
+                // extracted from classes.dex (they have @Metadata(m606d1=…) with old
+                // parameter names from Kotlin 1.x). Compiling them against the current
+                // Kotlin compiler fails because @Metadata parameter names changed.
+                // We keep all .kt files (WifiP2pManagerSingleton.kt etc.) — only
+                // the .java decompiled files are excluded.
+                exclude 'com/sdk/glassessdksample/ui/wifi/**/*.java'
+                // ── Exclude generated/unused AI stubs ────────────────────────────────────
+                exclude 'com/sdk/glassessdksample/ai/LargeDataHandler.kt'
+                exclude 'com/sdk/glassessdksample/ai/GlassesDeviceNotifyListener.kt'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
+
+    // AndroidX Core
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    // Permissions
+    implementation 'com.github.getActivity:XXPermissions:18.0'
+
+    // Event Bus
+    implementation 'org.greenrobot:eventbus:3.3.1'
+
+    // TensorFlow Lite
+    implementation 'org.tensorflow:tensorflow-lite:2.14.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.14.0'
+
+    // Networking
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    // UI Helpers
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
+
+    // Logging
+    implementation 'com.elvishew:xlog:1.11.0'
+
+    // WiFi Utilities - CORRECT DEPENDENCY
+    implementation 'com.github.thanosfisherman:wifiutils:WifiUtils1.6.3'
+
+    // Download
+    implementation 'com.liulishuo.okdownload:okdownload:1.0.7'
+
+    // Kotlin Standard Library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'org.robolectric:robolectric:4.11.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
