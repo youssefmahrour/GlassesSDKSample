@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_futuristic_gradient"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    tools:ignore="MissingClass">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingTop="30dp">
+
+        <!-- Header with Glowing Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/main_title"
+                android:textColor="#00F5FF"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:shadowColor="#00F5FF"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/pulse_dot"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ONLINE"
+                android:textColor="#00FF88"
+                android:textSize="10sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15" />
+        </LinearLayout>
+
+        <!-- Futuristic Status Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#1A1A2E"
+            app:cardElevation="8dp"
+            android:foreground="@drawable/glow_border">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_subtitle"
+                    android:textColor="#8899AA"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-light"
+                    android:letterSpacing="0.05" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="STATUS: READY"
+                        android:textColor="#00FF88"
+                        android:textSize="11sp"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.1" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="2dp"
+                        android:background="@drawable/gradient_line"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PWR 98%"
+                        android:textColor="#FFD700"
+                        android:textSize="12sp"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- AI Vision Button - Glowing Neon -->
+        <Button
+            android:id="@+id/btn_ai_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/btn_neon_glow"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.1"
+            android:minHeight="52dp"
+            android:text="ACTIVATE AI VISION"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:stateListAnimator="@null" />
+
+        <!-- Section Headers with Cyber Lines -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/cyber_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="DEVICE CONTROLS"
+                android:textColor="#00F5FF"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:shadowColor="#00F5FF"
+                android:shadowRadius="8" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/cyber_line" />
+        </LinearLayout>
+
+        <!-- Device Controls - Glassmorphism Grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:columnWidth="0dp"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btn_scan"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass"
+                android:fontFamily="sans-serif"
+                android:text="SCAN"
+                android:textAllCaps="true"
+                android:textColor="#E0E8F0"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass"
+                android:fontFamily="sans-serif"
+                android:text="CONNECT"
+                android:textAllCaps="true"
+                android:textColor="#E0E8F0"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_disconnect"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_danger"
+                android:fontFamily="sans-serif"
+                android:text="DISCONNECT"
+                android:textAllCaps="true"
+                android:textColor="#FF6B6B"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_add_listener"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass"
+                android:fontFamily="sans-serif"
+                android:text="LISTEN"
+                android:textAllCaps="true"
+                android:textColor="#E0E8F0"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_set_time"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass"
+                android:fontFamily="sans-serif"
+                android:text="SYNC TIME"
+                android:textAllCaps="true"
+                android:textColor="#E0E8F0"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_version"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass"
+                android:fontFamily="sans-serif"
+                android:text="VERSION"
+                android:textAllCaps="true"
+                android:textColor="#E0E8F0"
+                android:textSize="11sp" />
+        </GridLayout>
+
+        <!-- Media & AI Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/cyber_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="MEDIA and AI"
+                android:textColor="#FF6B9D"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:shadowColor="#FF6B9D"
+                android:shadowRadius="8" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/cyber_line" />
+        </LinearLayout>
+
+        <!-- Media Buttons - Grid Layout -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="5"
+            android:columnWidth="0dp"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="CAPTURE"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_video"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="VIDEO"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_record"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="AUDIO"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_thumbnail"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="AI ID"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_bt"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="PAIR"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_vision"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_green"
+                android:fontFamily="sans-serif"
+                android:text="VISION AI"
+                android:textAllCaps="true"
+                android:textColor="#00FF88"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_battery"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="BATTERY"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_volume"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="VOLUME"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_media_count"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="COUNT"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_data_download"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_glass_pink"
+                android:fontFamily="sans-serif"
+                android:text="DOWNLOAD"
+                android:textAllCaps="true"
+                android:textColor="#FFB3C6"
+                android:textSize="11sp" />
+        </GridLayout>
+
+        <!-- Footer Cyber Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="SYSTEM v2.0.1 - SECURE CONNECTION"
+            android:textColor="#334455"
+            android:textSize="9sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2"
+            android:gravity="center" />
+
+    </LinearLayout>
+</ScrollView>

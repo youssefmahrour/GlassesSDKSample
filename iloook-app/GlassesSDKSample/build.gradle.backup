@@ -1,0 +1,15 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.3.0'
+        // Update Kotlin plugin to 1.9.24 or later (2.0.x recommended)
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21'
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
