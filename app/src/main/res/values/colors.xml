@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Original Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Futuristic Theme Colors -->
+    <color name="neon_cyan">#00F5FF</color>
+    <color name="neon_pink">#FF6B9D</color>
+    <color name="neon_green">#00FF88</color>
+    <color name="neon_gold">#FFD700</color>
+    <color name="neon_purple">#9B59B6</color>
+    
+    <color name="dark_bg">#0A0A1A</color>
+    <color name="dark_card">#1A1A2E</color>
+    <color name="dark_surface">#0F0F1F</color>
+    
+    <color name="text_primary">#E0E8F0</color>
+    <color name="text_secondary">#8899AA</color>
+    <color name="text_muted">#334455</color>
+
+    <!-- Original App Colors -->
+    <color name="main_nv_select">#00F5FF</color>
+    <color name="main_nv_not_select">#717171</color>
+    <color name="main_nv_bg">#1A1A2E</color>
+    <color name="main_nv_text_bg">#00F5FF</color>
+    <color name="main_line_1">#334466</color>
+
+    <color name="title_bar_left">#00F5FF</color>
+    <color name="title_bar_center">#E0E8F0</color>
+    <color name="title_bar_right">#FF6B9D</color>
+    <color name="title_bar_line">#334466</color>
+</resources>
