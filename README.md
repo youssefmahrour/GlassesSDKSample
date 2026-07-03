@@ -36,22 +36,35 @@ This project combines:
 
 ## Getting Started
 
-### Android app
-1. Open the project in Android Studio.
-2. Sync Gradle files.
-3. Run the app on an emulator or physical device.
+### Windows
+1. Install Python 3.9+.
+2. Install Android Studio and the Android SDK.
+3. Connect a phone or start an emulator.
+4. Run:
+
+```powershell
+./setup.ps1
+./run.ps1
+```
+
+### macOS / Linux
+1. Install Python 3.9+.
+2. Install Android Studio and the Android SDK.
+3. Connect a phone or start an emulator.
+4. Run:
+
+```bash
+chmod +x ./setup.sh
+./setup.sh
+./setup.sh --skip-install
+./run_android.py
+```
 
 ### Desktop app
 From the project root, run:
 
 ```powershell
 python pc_replacement_app.py
-```
-
-If you are using the Python installation from the local SDK environment, you can run:
-
-```powershell
-C:\Users\mahro\AppData\Local\Python\pythoncore-3.14-64\python.exe pc_replacement_app.py
 ```
 
 ## Usage Notes
